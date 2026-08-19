@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md Shahadat Hossen - Electrical Engineer & Researcher</title>
+<title>Md Shahadat Hossen — Electrical Engineer & Researcher</title>
 <meta name="description" content="Md Shahadat Hossen — M.S. Electrical Engineering, Gannon University. Research in autonomous vehicles, cyber-physical systems, power electronics, and renewable energy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,17 +131,32 @@
   @media(max-width:720px){.proj-wide{grid-template-columns:1fr}.proj-img{min-height:200px}}
 
   /* ---------- gallery ---------- */
-  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .gcard{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--surface);
-    border:1px solid var(--line);margin:0;aspect-ratio:4/3}
-  .gcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-  .gcard:hover img{transform:scale(1.05)}
-  .gcard figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 14px;
-    background:linear-gradient(180deg,transparent,rgba(13,27,36,.86));color:#fff}
-  .gcard figcaption b{font-family:var(--disp);font-size:14.5px;font-weight:600;display:block}
-  .gcard figcaption span{font-family:var(--mono);font-size:10.5px;opacity:.85;letter-spacing:.02em}
-  @media(max-width:820px){.gal{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.gal{grid-template-columns:1fr}}
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:210px;gap:14px}
+  .gcard{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;
+    background:var(--ink);border:1px solid var(--line);margin:0}
+  .gcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease}
+  .gcard:hover img{transform:scale(1.06)}
+  /* first photo is the feature: 2 columns wide, 2 rows tall */
+  .gcard:first-child{grid-column:span 2;grid-row:span 2}
+  .gcard figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 14px;
+    background:linear-gradient(180deg,transparent,rgba(11,22,30,.9));color:#fff;
+    transform:translateY(0);transition:padding .3s ease}
+  .gcard figcaption b{font-family:var(--disp);font-size:14.5px;font-weight:600;display:block;line-height:1.25}
+  .gcard:first-child figcaption b{font-size:18px}
+  .gcard figcaption span{font-family:var(--mono);font-size:10.5px;opacity:.88;letter-spacing:.02em;
+    display:block;margin-top:2px}
+  .gcard::after{content:"⤢";position:absolute;top:12px;right:14px;color:#fff;font-size:15px;
+    opacity:0;transition:opacity .25s ease;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+  .gcard:hover::after{opacity:.9}
+  @media(max-width:820px){
+    .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+    .gcard:first-child{grid-column:span 2;grid-row:span 1}
+    .gcard:first-child figcaption b{font-size:15px}
+  }
+  @media(max-width:520px){
+    .gal{grid-template-columns:1fr;grid-auto-rows:210px}
+    .gcard:first-child{grid-column:span 1}
+  }
 
   /* lightbox */
   .lightbox{position:fixed;inset:0;z-index:100;background:rgba(9,16,20,.92);
@@ -249,7 +264,7 @@
 
 <nav>
   <div class="navin">
-    <a class="brand" href="#top"><span class="live"></span>MD SHAHADAT HOSSEN</a>
+    <a class="brand" href="#top"><span class="live"></span>M_S_HOSSEN</a>
     <button class="menu-btn" id="menuBtn">MENU</button>
     <div class="navlinks" id="navlinks">
       <a href="#about">About</a>
@@ -270,9 +285,9 @@
       <h1>Md Shahadat<br>Hossen</h1>
       <div class="role-line">I build systems for <span class="typed" id="typed"></span><span class="cursor"></span></div>
       <p class="lede">I just finished my Master's in Electrical Engineering at <b>Gannon University</b>.
-      I'm happiest working on the messy part where hardware meets autonomy - designing parts,
-      chasing down wiring faults, and getting a robot to find its own way. Lately I've been
-      deep in <b>Machine Learning, Deep Learning,Programming</b> and <b>Robotics</b> too.</p>
+      I'm happiest working on the messy part where hardware meets autonomy — designing parts,
+      chasing down wiring faults, and getting a vehicle to find its own way. Lately I've been
+      deep in <b>power electronics</b> and <b>DC microgrids</b> too.</p>
       <div class="cta">
         <a class="btn primary" href="#pubs">View publications</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
@@ -281,7 +296,7 @@
     <div class="photo-frame">
       <img src="images/headshot.jpg" alt="Md Shahadat Hossen">
       <div class="scan"></div>
-      <div class="frame-tag"></div>
+      <div class="frame-tag">ID · GANNON ECE</div>
     </div>
   </div>
 
@@ -301,7 +316,7 @@
         <p>I'm an electrical engineer, and I'm at my best when a project touches both the circuit
         board and the code. For two years at Gannon University I worked with Prof. Wookwon Lee, the
         ECE Department Chair, building a cyber-physical systems framework for a 1/5th-scale autonomous vehicle.</p>
-        <p class="muted">That meant doing a bit of everything designing and 3D-printing parts,
+        <p class="muted">That meant doing a bit of everything — designing and 3D-printing parts,
         soldering and tracing PCB faults, wiring up GPS and sensors, running ROS on Linux, and
         actually taking the vehicle outside to see how it held up. Away from the vehicle, much of
         my research has been in DC microgrids and renewable energy.</p>
@@ -309,11 +324,13 @@
       <div class="areas reveal">
         <h3>Topics of interest</h3>
         <div class="chips">
-          <span class="chip">Robotics<span class="star">★</span></span>
+          <span class="chip">Cyber-Physical Systems <span class="star">★</span></span>
           <span class="chip">Autonomous Vehicles <span class="star">★</span></span>
-          <span class="chip">Cyber-Physical Systems</span>
+          <span class="chip">Robotics</span>
           <span class="chip">Artificial Intelligence</span>
           <span class="chip">Internet of Things <span class="star">★</span></span>
+          <span class="chip">Renewable Energy <span class="star">★</span></span>
+          <span class="chip">Power Electronics</span>
         </div>
       </div>
     </div>
@@ -329,7 +346,7 @@
         <img class="proj-img" src="images/vehicle.jpg" alt="The 1/5-scale autonomous vehicle with compute box, cooling, cameras and GPS">
         <div class="proj-body">
           <div class="num">PROJECT 01 · FLAGSHIP</div>
-          <h3>CPS Framework 1/5th-Scale Autonomous Vehicle</h3>
+          <h3>CPS Framework — 1/5th-Scale Autonomous Vehicle</h3>
           <p>My two-year graduate project with Prof. Wookwon Lee: a full cyber-physical systems
           platform on an off-road chassis. I designed and 3D-printed the compute box and chassis
           parts, tracked down the PCB wiring faults that kept crashing it, integrated GPS and stereo
@@ -395,17 +412,7 @@
         <img src="images/outreach.jpg" alt="STEM outreach workshop">
         <figcaption><b>STEM outreach</b><span>AV demo at the IU5 MakerSpace</span></figcaption>
       </figure>
-
-      <!-- ============================================================
-           TO ADD A NEW PHOTO: 1) upload your image into the images/ folder
-           (e.g. images/newphoto.jpg), then 2) copy the block below, remove the
-           <!-- and --> around it, and change the filename, caption, and labels.
-      ============================================================
-      <figure class="gcard reveal" data-cap="Longer caption shown when the photo is clicked.">
-        <img src="images/newphoto.jpg" alt="Short description">
-        <figcaption><b>Short title</b><span>One-line subtitle</span></figcaption>
-      </figure>
-      -->
+      <!-- To add a photo: upload it into the images/ folder, then duplicate any figure block above and change the image filename, the data-cap text, and the title/subtitle. -->
     </div>
   </div>
 </section>
@@ -465,13 +472,13 @@
     <div class="split">
       <div class="card reveal">
         <img class="card-img" src="images/hkn.jpg" alt="IEEE-HKN Eta Kappa Nu induction, Iota Nu Chapter, Gannon University">
-        <div class="card-cap">Inducted into IEEE-HKN (Eta Kappa Nu), Iota Nu Chapter - Gannon University, April 2025</div>
+        <div class="card-cap">Inducted into IEEE-HKN (Eta Kappa Nu), Iota Nu Chapter — Gannon University, April 2025</div>
         <h3>Honors &amp; leadership</h3>
         <div class="sub">RECOGNITION</div>
         <div class="award"><span class="ico">VP</span><div><b>Vice President, IEEE-HKN (Eta Kappa Nu)</b><br><span>Iota Nu Chapter — leadership &amp; academic excellence in ECE</span></div></div>
         <div class="award"><span class="ico">$</span><div><b>Graduate Assistantship, Gannon University</b><br><span>$18,000 scholarship + 18-month assistantship for research excellence</span></div></div>
         <div class="award"><span class="ico">★</span><div><b>President's Excellence Award, MIU</b><br><span>Innovation in technical workshops &amp; robotics programs</span></div></div>
-        <div class="award"><span class="ico">⌘</span><div><b>Treasurer, Bangladesh Student Association</b><br><span>Gannon University - budgets, sponsorships, event logistics</span></div></div>
+        <div class="award"><span class="ico">⌘</span><div><b>Treasurer, Bangladesh Student Association</b><br><span>Gannon University — budgets, sponsorships, event logistics</span></div></div>
       </div>
       <div class="card reveal">
         <h3>Teaching</h3>
@@ -507,6 +514,8 @@
         <div><div class="label">LinkedIn</div><div class="handle">linkedin.com/in/mshn1</div></div><span class="arrow">↗</span></a>
       <a class="clink reveal" href="https://github.com/mdshahadathossen" target="_blank" rel="noopener">
         <div><div class="label">GitHub</div><div class="handle">github.com/mdshahadathossen</div></div><span class="arrow">↗</span></a>
+      <a class="clink reveal" href="tel:+13478300297">
+        <div><div class="label">Phone</div><div class="handle">+1 (347) 830-0297</div></div><span class="arrow">↗</span></a>
     </div>
   </div>
 </section>
