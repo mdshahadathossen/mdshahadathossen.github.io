@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Shahadat Hossen - Electrical Engineer & Researcher</title>
-<meta name="description" content="Md Shahadat Hossen — M.S. Electrical Engineering, Gannon University. Research in autonomous vehicles, cyber-physical systems, power electronics, and renewable energy.">
+<meta name="description" content="Md Shahadat Hossen - M.S. Electrical Engineering, Gannon University. Research in autonomous vehicles, UAVs, Robotics, Multi-robot systems, and cyber-physical systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -281,13 +281,12 @@
 <header class="hero wrap" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hgreet">// Electrical Engineer · Researcher</div>
+      <div class="hgreet">Electrical Engineer · Researcher</div>
       <h1>Md Shahadat<br>Hossen</h1>
       <div class="role-line">I build systems for <span class="typed" id="typed"></span><span class="cursor"></span></div>
-      <p class="lede">I just finished my Master's in Electrical Engineering at <b>Gannon University</b>.
-      I'm happiest working on the messy part where hardware meets autonomy — designing parts,
-      chasing down wiring faults, and getting a vehicle to find its own way. Lately I've been
-      deep in <b>power electronics</b> and <b>DC microgrids</b> too.</p>
+      <p class="lede">My current interests are <b>autonomous vehicles</b>, <b>UAVs</b>, <b>robotics</b>, ,<b>multi-robot systems</b>,
+        <b>intelligent navigation</b>, and <b>learning-enabled autonomy</b>,
+        with a focus on building safe and reliable systems for real-world environments.</p>
       <div class="cta">
         <a class="btn primary" href="#pubs">View publications</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
@@ -302,7 +301,6 @@
   <div class="telemetry reveal">
     <div class="tele"><b data-n="9">0</b><span>Publications</span></div>
     <div class="tele"><b data-n="5">0</b><span>Research projects</span></div>
-    <div class="tele"><b data-n="98" data-suffix="%">0</b><span>Voltage stability</span></div>
     <div class="tele"><b data-n="90">0</b><span>Students taught</span></div>
   </div>
 </header>
@@ -312,23 +310,23 @@
     <div class="eyebrow reveal">About</div>
     <div class="about-grid">
       <div class="reveal">
-        <p>I'm an electrical engineer, and I'm at my best when a project touches both the circuit
-        board and the code. For two years at Gannon University I worked with Prof. Wookwon Lee, the
-        ECE Department Chair, building a cyber-physical systems framework for a 1/5th-scale autonomous vehicle.</p>
-        <p class="muted">That meant doing a bit of everything designing and 3D-printing parts,
-        soldering and tracing PCB faults, wiring up GPS and sensors, running ROS on Linux, and
-        actually taking the vehicle outside to see how it held up. Away from the vehicle, much of
-        my research has been in DC microgrids and renewable energy.</p>
+        <p>I recently completed my M.S. in Electrical Engineering at Gannon University, 
+          where I worked on the messy and exciting part where hardware meets autonomy. 
+          For two years, I worked with Prof. Wookwon Lee on a cyber-physical systems framework for a 1/5-scale autonomous vehicle.</p>
+        <p class="muted">My work involved designing and 3D-printing parts, troubleshooting wiring and hardware, integrating GPS and
+          sensors, working with ROS and Linux, and testing the vehicle outdoors.I enjoy turning ideas into working systems and solving
+          the problems that appear when hardware, software, and autonomy come together.</p>
       </div>
       <div class="areas reveal">
         <h3>Topics of interest</h3>
         <div class="chips">
-          <span class="chip"> Robotics <span class="star">★</span></span>
-          <span class="chip">Autonomous Vehicles <span class="star">★</span></span>
+          <span class="chip"> Autonomous Vehicles <span class="star">★</span></span>
+          <span class="chip">UAVs<span class="star">★</span></span>
+          <span class="chip">Robotics<span class="star">★</span></span>
+          <span class="chip">Multi-Robot Systems<span class="star">★</span></span>
           <span class="chip">Cyber-Physical Systems</span>
           <span class="chip">Artificial Intelligence</span>
           <span class="chip">Internet of Things <span class="star">★</span></span>
-          <span class="chip">Power Electronics</span>
         </div>
       </div>
     </div>
@@ -351,7 +349,7 @@
           cameras, and ran the vehicle through outdoor field tests on a ROS/Ubuntu stack. The platform
           became the testbed for our IEEE CCNC 2026 paper on sAV/sUAS video-based navigation.</p>
           <div class="stack"><span>ROS</span><span>Ubuntu</span><span>Fusion 360</span><span>PrusaSlicer</span><span>GPS</span><span>Stereo vision</span></div>
-          <a class="proj-link" href="https://lnkd.in/eNEkNvpT" target="_blank" rel="noopener">Read the CCNC 2026 paper →</a>
+          <a class="proj-link" href="https://ieeexplore.ieee.org/abstract/document/11366335" target="_blank" rel="noopener">Read the CCNC 2026 paper →</a>
         </div>
       </div>
       <div class="proj reveal">
@@ -527,7 +525,7 @@
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* typing */
-const phrases = ["autonomous vehicles.","cyber-physical systems.","DC microgrids.","embedded hardware.","renewable energy."];
+const phrases = ["autonomous vehicles.", "UAVs.", "Robotics.", "Multi-robot systems.", and "cyber-physical systems."];
 const typed = document.getElementById('typed');
 let p=0,i=0,del=false;
 function type(){
@@ -560,7 +558,7 @@ document.querySelectorAll('.reveal').forEach(el=>rio.observe(el));
 const PUBS=[
  {y:2026,cat:"Autonomous Systems",venue:"IEEE CCNC 2026",
   t:"An Exemplary Platform of Integrated sAV/sUAS System for VHF/UHF-Band Video-Based Navigation in Extreme-Terrain Environments",
-  a:"W. Lee, M. S. Hossen",link:"https://lnkd.in/eNEkNvpT"},
+  a:"W. Lee, M. S. Hossen",link:"https://ieeexplore.ieee.org/abstract/document/11366335"},
  {y:2025,cat:"Biomedical",venue:"IEEE ICREST 2025",
   t:"Skin Tumor, Lipoma and Cyst Detection by Graphene-Based On-Body Patch Antenna in L Band",
   a:"S. H. Eshan, M. S. Hossen, et al.",link:"https://doi.org/10.1109/ICREST63960.2025.10914429"},
