@@ -74,19 +74,7 @@
   .photo-frame{position:relative;justify-self:end;width:100%;max-width:320px}
   .photo-frame img{width:100%;display:block;border-radius:14px;
     filter:saturate(1.02) contrast(1.02)}
-  .photo-frame::before,.photo-frame::after{content:"";position:absolute;width:22px;height:22px;
-    border:2px solid var(--accent);z-index:2}
-  .photo-frame::before{top:-7px;left:-7px;border-right:none;border-bottom:none}
-  .photo-frame::after{bottom:-7px;right:-7px;border-left:none;border-top:none}
-  .scan{position:absolute;inset:0;border-radius:14px;overflow:hidden;pointer-events:none}
-  .scan::after{content:"";position:absolute;left:0;right:0;height:34%;
-    background:linear-gradient(180deg,transparent,rgba(10,174,111,.18),transparent);
-    animation:scanmove 4.5s ease-in-out infinite}
-  @keyframes scanmove{0%{top:-34%}100%{top:100%}}
-  .frame-tag{position:absolute;bottom:10px;left:10px;font-family:var(--mono);font-size:10px;
-    letter-spacing:.08em;background:rgba(13,27,36,.78);color:#fff;padding:4px 8px;border-radius:6px;z-index:3}
-
-
+  
   /* ---------- about / chips ---------- */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
   .about-grid p{font-size:16px;color:var(--ink);margin-bottom:16px}
@@ -290,7 +278,6 @@
     <div>
       <div class="hgreet">Electrical Engineer · Researcher</div>
       <h1>Md Shahadat<br>Hossen</h1>
-      <div class="role-line">I build systems for <span class="typed" id="typed"></span><span class="cursor"></span></div>
       <p class="lede">My current interests are <b>autonomous vehicles</b>, <b>UAVs</b>, <b>robotics</b>, <b>multi-robot systems</b>,
         <b>intelligent navigation</b>, and <b>learning-enabled autonomy</b>,
         with a focus on building safe and reliable systems for real-world environments.</p>
@@ -301,7 +288,6 @@
     </div>
     <div class="photo-frame">
       <img src="images/headshot.jpg" alt="Md Shahadat Hossen">
-      <div class="scan"></div>
     </div>
   </div>
 
