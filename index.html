@@ -371,7 +371,6 @@
         logic for sensor thresholds, turn decisions, and end-of-path detection and tuned speed and
         turn sensitivity through repeated testing.</p>
         <div class="stack"><span>ESP32</span><span>Arduino</span><span>C++</span><span>IR sensors</span><span>Line following</span></div>
-       </div>        
       </div>
     </div>
   </div>
@@ -541,30 +540,6 @@
 
 <script>
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* typing */
-const phrases = ["autonomous vehicles.", "UAVs.", "Robotics.", "Multi-robot systems.", "cyber-physical systems."];
-const typed = document.getElementById('typed');
-let p=0,i=0,del=false;
-function type(){
-  const w=phrases[p]; typed.textContent=w.slice(0,i);
-  if(!del&&i<w.length){i++;setTimeout(type,55);}
-  else if(!del){del=true;setTimeout(type,1600);}
-  else if(i>0){i--;setTimeout(type,28);}
-  else{del=false;p=(p+1)%phrases.length;setTimeout(type,300);}
-}
-if(reduced){typed.textContent=phrases[0];}else{type();}
-
-/* counters */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{
-  if(!e.isIntersecting)return; io.unobserve(e.target);
-  const t=+e.target.dataset.n,suf=e.target.dataset.suffix||'+',dur=1200,t0=performance.now();
-  if(reduced){e.target.textContent=t+suf;return;}
-  (function s(now){const k=Math.min((now-t0)/dur,1);
-    e.target.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(k===1?suf:'');
-    if(k<1)requestAnimationFrame(s);})(t0);
-});},{threshold:.5});
-document.querySelectorAll('.tele b').forEach(c=>io.observe(c));
 
 /* reveal */
 const rio=new IntersectionObserver(es=>{es.forEach(e=>{
