@@ -108,6 +108,19 @@
   .proj-link{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12.5px;
     color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
   .proj-link:hover{color:var(--accent)}
+  /* feature project: figures + file buttons */
+  .proj-feature{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr 1fr;gap:0;padding:0;overflow:hidden}
+  .proj-figs{background:#fff;padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;border-right:1px solid var(--line)}
+  .proj-figs .fig-main{width:100%;max-height:235px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px}
+  .proj-figs .fig-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .proj-figs .fig-row img{width:100%;height:112px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px}
+  .proj-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .proj-btn{font-family:var(--disp);font-size:13px;font-weight:600;text-decoration:none;
+    padding:10px 16px;border-radius:9px;background:var(--ink);color:#fff;transition:.18s}
+  .proj-btn:hover{background:var(--accent);transform:translateY(-1px)}
+  .proj-btn.ghost{background:transparent;border:1px solid var(--line-strong);color:var(--ink)}
+  .proj-btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:720px){.proj-feature{grid-template-columns:1fr}.proj-figs{border-right:none;border-bottom:1px solid var(--line)}}
   @media(max-width:720px){.proj-wide{grid-template-columns:1fr}.proj-img{min-height:200px}}
 
   /* ---------- gallery ---------- */
@@ -296,12 +309,12 @@
 <header class="hero wrap" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hgreet">Graduate Student</div>
+      <div class="hgreet"></div>
       <h1>Md Shahadat<br>Hossen</h1>
       <p class="lede">Built and tested autonomous vehicles, with hands-on experience taking a
         <b>1/5th-scale autonomous platform</b> from hardware design to outdoor field tests. Focused on
         developing <b>heterogeneous aerial, ground, and underwater robots</b> that work as one team and
-        stay coordinated even when communication breaks down — to support
+        stay coordinated even when communication breaks down, to support
         <b>search-and-rescue and defense missions</b>.</p>
       <div class="cta">
         <a class="btn primary" href="#pubs">View publications</a>
@@ -362,14 +375,27 @@
           <a class="proj-link" href="https://ieeexplore.ieee.org/abstract/document/11366335" target="_blank" rel="noopener">Read the CCNC 2026 paper →</a>
         </div>
       </div>
-      <div class="proj reveal">
-        <div class="metric"></div>
-        <div class="num">PROJECT 02</div>
-        <h3>Bidirectional DC-DC Converter for DC Microgrids</h3>
-        <p>I built a droop-controlled converter to balance power between solar, battery, and load.
-        It held voltage steady at 98% as loads changed, and tuning the MPPT pushed energy harvest
-        up 65% in simulation.</p>
-        <div class="stack"><span>MATLAB</span><span>Simulink</span><span>Droop control</span><span>MPPT</span></div>
+      <div class="proj reveal proj-feature">
+        <div class="proj-figs">
+          <img class="fig-main" src="images/microgrid_model.jpg" alt="MATLAB/Simulink model of the DC microgrid converter">
+          <div class="fig-row">
+            <img src="images/microgrid_results.jpg" alt="Simulation results: stable bus voltage and balanced power flow">
+            <img src="images/microgrid_architecture.jpg" alt="Control architecture: droop and SoC-based balancing">
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="num">PROJECT 02 · M.SC. PLAN C</div>
+          <h3>Bidirectional DC-DC Converter for DC Microgrids</h3>
+          <p>My M.Sc. Plan C project: a droop-controlled converter balancing power between solar,
+          battery, and load. It held the bus voltage steady at about 98% as loads changed, and tuning
+          the MPPT pushed energy harvest up 65% in MATLAB/Simulink simulation, with state-of-charge
+          (SoC) balancing layered over the voltage and current controllers.</p>
+          <div class="stack"><span>MATLAB</span><span>Simulink</span><span>Droop control</span><span>MPPT</span><span>SoC balancing</span></div>
+          <div class="proj-actions">
+            <a class="proj-btn" href="https://1drv.ms/b/c/A12F3CA702662866/IQDKYA2AjeMuS5f_wlLfcsGnAck6IDE1d2dlfP_v3lqtOWU?e=0wml3Y" target="_blank" rel="noopener">Read the report (PDF) ↗</a>
+            <a class="proj-btn ghost" href="https://1drv.ms/u/c/A12F3CA702662866/IQDl4NQpzKOMQr5J0KvX890YAfIfCbFrTJd8qMQRHtxnSIg?e=zFn4Ox" target="_blank" rel="noopener">Simulink model (.slx) ↗</a>
+          </div>
+        </div>
       </div>
       <div class="proj reveal">
         <div class="num">PROJECT 03</div>
@@ -381,13 +407,13 @@
       <div class="proj reveal">
         <div class="num">PROJECT 04</div>
         <h3>Power Shoe</h3>
-        <p>A wearable prototype that turns the energy from your footsteps into electricity a fun
+        <p>A wearable prototype that turns the energy from your footsteps into electricity, a fun
         dive into piezoelectric and mechanical harvesting.</p>
         <div class="stack"><span>Energy harvesting</span><span>Hardware</span><span>Prototyping</span></div>
       </div>  
       <div class="proj reveal">
         <div class="num">PROJECT 05</div>
-        <h3>Zumo Bot — Autonomous Path Follower</h3>
+        <h3>Zumo Bot: Autonomous Path Follower</h3>
         <p>Programmed a Zumo 32U4 robot to drive a taped path on its own, reading a 6-channel
         IR reflectance array to decide when to go straight, turn, or stop. I wrote the ESP32/Arduino
         logic for sensor thresholds, turn decisions, and end-of-path detection and tuned speed and
@@ -439,18 +465,6 @@
         <img src="images/outreach.jpg" alt="STEM outreach workshop">
         <figcaption><b>STEM outreach</b><span>AV demo at the IU5 MakerSpace</span></figcaption>
       </figure>
-      <figure class="gcard reveal" data-cap="MATLAB/Simulink model of my bidirectional DC-DC converter for a DC microgrid — PV array with MPPT, battery storage, and droop-based power-flow control. My M.S. Plan C project.">
-        <img src="images/microgrid_model.jpg" alt="Simulink model of the DC microgrid converter">
-        <figcaption><b>DC microgrid — Simulink model</b><span>PV, MPPT, battery &amp; droop control</span></figcaption>
-      </figure>
-      <figure class="gcard reveal" data-cap="Simulation results: the bus voltage stays stable while power flows between PV, battery, and load under changing generation and demand - droop control holding ~98% voltage stability.">
-        <img src="images/microgrid_results.jpg" alt="Simulation results showing stable bus voltage and power flow">
-        <figcaption><b>Simulation results</b><span>Stable bus voltage &amp; balanced power flow</span></figcaption>
-      </figure>
-      <figure class="gcard reveal" data-cap="Control architecture: droop control with state-of-charge (SoC) balancing drives the voltage and current controllers and PWM to the bidirectional battery charger.">
-        <img src="images/microgrid_architecture.jpg" alt="Control architecture block diagram">
-        <figcaption><b>Control architecture</b><span>Droop + SoC-based power balancing</span></figcaption>
-      </figure>
       <figure class="gcard reveal" data-cap="On Dr. Lee's launch team for Gannon's NASA Near Space Exploration Program, recovering payloads (parachute to solar radio detectors) after a high-altitude balloon mission.">
         <img src="images/balloon.jpg" alt="Near-space payload recovery">
         <figcaption><b>Near-space payload recovery</b><span>NASA Near Space Exploration Program</span></figcaption>
@@ -472,17 +486,17 @@
       <a class="vcard reveal" href="https://1drv.ms/v/c/A12F3CA702662866/IQAG4CbBrzHsT6lVSL92JlMIAawB-JURFkt43fz_MiW8DA8?e=ZrwQhS" target="_blank" rel="noopener">
         <img src="images/vehicle.jpg" alt="Autonomous vehicle field-test demo video">
         <span class="play" aria-hidden="true"></span>
-        <span class="cap"><b>Autonomous vehicle — field test</b><span>Remote-driven run · plays on OneDrive ↗</span></span>
+        <span class="cap"><b>Autonomous vehicle: field test</b><span>Remote-driven run · plays on OneDrive ↗</span></span>
       </a>
       <a class="vcard reveal" href="https://1drv.ms/v/c/A12F3CA702662866/IQDLvWewR7axSpHbI70C1QTIATyUthQ_wtKtL62CxtsqKkM?e=PdZhYg" target="_blank" rel="noopener">
         <img src="images/zumo.jpg" alt="Zumo robot following the first predefined path">
         <span class="play" aria-hidden="true"></span>
-        <span class="cap"><b>Zumo bot — 1st predefined path</b><span>Autonomous line following · plays on OneDrive ↗</span></span>
+        <span class="cap"><b>Zumo bot: 1st predefined path</b><span>Autonomous line following · plays on OneDrive ↗</span></span>
       </a>
       <a class="vcard reveal" href="https://1drv.ms/v/c/A12F3CA702662866/IQBqZxg35MA-TbDKphLjkVAtAdlAAZISVJIfUxvu07tM8zQ?e=kkrBes" target="_blank" rel="noopener">
         <img src="images/zumo.jpg" alt="Zumo robot following the second predefined path">
         <span class="play" aria-hidden="true"></span>
-        <span class="cap"><b>Zumo bot — 2nd predefined path</b><span>Autonomous line following · plays on OneDrive ↗</span></span>
+        <span class="cap"><b>Zumo bot: 2nd predefined path</b><span>Autonomous line following · plays on OneDrive ↗</span></span>
       </a>
     </div>
   </div>
@@ -513,12 +527,12 @@
     <h2 class="sec reveal">Education</h2>
     <div class="timeline reveal">
       <div class="tl">
-        <div class="yr">2023 — 2025</div>
+        <div class="yr">2023 - 2025</div>
         <h3>M.Sc. in Electrical Engineering</h3>
         <p>Gannon University, Erie, PA · <span class="gpa">CGPA 3.81 / 4.00</span></p>
       </div>
       <div class="tl">
-        <div class="yr">2017 — 2020</div>
+        <div class="yr">2017 - 2020</div>
         <h3>B.Sc. in Electrical &amp; Electronic Engineering</h3>
         <p>Manarat International University, Dhaka, Bangladesh · <span class="gpa">CGPA 3.86 / 4.00</span></p>
       </div>
@@ -658,7 +672,7 @@ render();
 const mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
 mb.onclick=()=>nl.classList.toggle('open');
 
-/* in-page navigation via JS (works inside iframes/embeds — never changes the URL) */
+/* in-page navigation via JS (works inside iframes/embeds, never changes the URL) */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const id=a.getAttribute('href').slice(1);
